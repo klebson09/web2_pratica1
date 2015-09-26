@@ -3,6 +3,10 @@
     <servlet>
         <servlet-name>Controller</servlet-name>
         <servlet-class>servlets.Controller</servlet-class>
+        <init-param>
+          <param-name>username</param-name>
+          <param-value>Klebson</param-value>
+        </init-param>
     </servlet>
     
     <servlet-mapping>
@@ -14,10 +18,10 @@
     1º tag <servlet> do servlet que recebe a request
     2º tag <servlet-mapping> do servlet que recebe a request
     
-    3º fiz o mesmo para o servlet ControllerResponse
-        seguindo a ordem
-        <servlet>
-        <servlet-mapping> ambos do ControllerResponse-->
+3º fiz o mesmo para o servlet ControllerResponse
+    seguindo a ordem
+    <servlet>
+    <servlet-mapping> ambos do ControllerResponse-->
         
     <servlet>
         <servlet-name>ControllerResponse</servlet-name>
@@ -28,22 +32,26 @@
         <servlet-name>ControllerResponse</servlet-name>
         <url-pattern>/ControllerResponse.do</url-pattern>
     </servlet-mapping>
-    
-<!--    <init-param>
-    <param-name>greeting</param-name> 
-    <param-value>Welcome</param-value> 
-  </init-param>
-   <init-param>
-    <param-name>person</param-name> 
-    <param-value>WebLogic Developer</param-value> 
-  </init-param>
-    -->
-<!--    <session-config>
+    <!--    <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>-->
     <welcome-file-list>
-                <welcome-file>Controller.do</welcome-file>
+        <welcome-file>Controller.do</welcome-file>
     </welcome-file-list>
+    
+<!--    Outra possibilidade é configurar parâmetros para o contexto inteiro e não 
+    apenas uma servlet específica. Podemos fazer isso com a tag <context-param>, 
+    como abaixo:
+        <context-param>
+          <param-name>nome</param-name>
+          <param-value>param</param-value>
+        </context-param>
+        E, no código Java de uma Servlet, por exemplo:
+        String valor = getServletContext().getInitParameter("nome");
+    http://www.caelum.com.br/apostila-java-web/apendice-topicos-da-servlet-api/#19-1-init-params-e-context-params
+    
+    -->
+    
 </web-app>

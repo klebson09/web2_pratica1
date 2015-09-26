@@ -32,9 +32,9 @@ public class Controller extends HttpServlet {
 //            out.println("</body>");
 //            out.println("</html>");
             //obtem os dados do formulário (getParameter)
-            String username = request.getParameter("username");
+//            String username = request.getParameter("username");
             String password = request.getParameter("password");
-
+            String username = getServletConfig().getInitParameter("username");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
