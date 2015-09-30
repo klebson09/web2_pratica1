@@ -38,6 +38,7 @@ public class Controller extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
+            out.println("<h1>" + request.getContextPath() +"</h1>");
             out.println("<FORM name=\"+\"loginForm\" ACTION=\"ControllerResponse.do\" METHOD=\"POST\">");
             out.println("<INPUT TYPE=\"TEXT\" NAME=\"username\" VALUE=\"" + username  + "\"/>");
             out.println("<INPUT TYPE=\"TEXT\" NAME=\"password\" VALUE=\"" + password + "\"/>");

@@ -7,10 +7,12 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.System.out;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -53,11 +55,22 @@ public class ControllerResponse extends HttpServlet {
             throws ServletException, IOException {
 //        Controller c = new Controller();
 //        c.doGet(request, response);
-        
-        //processRequest(request, response);
+          //processRequest(request, response);
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
+        
+        request.getParameter(username);
+        request.getParameter(password);
+        
+        if(session.isNew()){
+            out.println("Iniciada uma nova sessão! <br>");
+        }else{
+            out.println("Bem vido a sua sessão!");
+        }
+        
+      
         
             out.println("<!DOCTYPE html>");
             out.println("<html>");
